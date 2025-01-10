@@ -1,0 +1,45 @@
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folders
+.venv/
+env/
+venv/
+
+# Environment variables
+*.env
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Data folders
+models/data/raw/
+models/data/processed/
+models/data/external/
+
+# Docker-specific files
+docker-compose.override.yml
+
+# Cache files
+*.cache
+*.tmp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Testing artifacts
+coverage/
+*.cover
+*.coverage
+.cache
+
+# IDE-specific files
+.idea/
+.vscode/
