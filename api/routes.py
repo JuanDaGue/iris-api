@@ -8,7 +8,8 @@ router = APIRouter()
 @router.post("/predict", response_model=PredictOutput)
 async def predict_endpoint(input_data: PredictInput):
     """
-    Endpoint to predict the class of Iris flowers based on input features.
+    Enpoind predict, recive las caracteristicas de las plantas,
+    y devuelve el nombre de la planta.
     """
     try:
         prediction = predict(input_data)
