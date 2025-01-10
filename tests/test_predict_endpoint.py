@@ -64,7 +64,7 @@ def test_predict_endpoint_invalid_input(invalid_input_data):
 
 def test_predict_endpoint_server_error(mocker, valid_input_data):
     """Simula un error del servidor durante la predicción."""
-    mocker.patch("api.services.predict", side_effect=Exception("Simulated error"))
+    mocker.patch("api.routes.predict", side_effect=Exception("Simulated error"))
 
     response = client.post("/predict", json=valid_input_data)
     assert response.status_code == 500

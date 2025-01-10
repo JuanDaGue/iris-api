@@ -52,7 +52,7 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone <URL-del-repositorio>
+   git clone https://github.com/JuanDaGue/iris-api.git
    cd iris-classification-api
 
 2. ** Construir el contenedor Docker:**
@@ -73,6 +73,7 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
 **POST /predict**
 
 ### Entrada:
+
 JSON con las medidas de sépalo y pétalo.
 ```json
 {
@@ -81,12 +82,16 @@ JSON con las medidas de sépalo y pétalo.
   "petal_length": 1.4,
   "petal_width": 0.2
 }
-Salida: Especie predicha (Iris-setosa, Iris-versicolor o Iris-virginica).
-```json{
+```
+
+**Salida**: Especie predicha (Iris-setosa, Iris-versicolor o Iris-virginica).
+```json
+{
     "prediction": "Iris-setosa"
 }
+```
 
-## **Tecnologías Utilizadas**
+## Tecnologías Utilizadas
     -**FastAPI**: Framework para construir APIs modernas y rápidas.
     - **Scikit-learn**: Librería para entrenar el modelo de clasificación.
     - **Docker**: Para contenerización y despliegue.

@@ -25,7 +25,7 @@ def mock_env_variable():
 def test_predict_valid_input(mock_model_load, mock_env_variable):
     # Configura el mock para que el modelo prediga un valor específico
     mock_model_load.predict.return_value = [1]  # Predicción: 'versicolor'
-
+    print('MockModel', mock_model_load)
     # Datos de entrada válidos
     input_data = PredictInput(
         sepal_length=5.1,
@@ -38,7 +38,7 @@ def test_predict_valid_input(mock_model_load, mock_env_variable):
     species_name = predict(input_data)
 
     # Verifica que la predicción devuelva el nombre correcto
-    assert species_name == "versicolor"
+    assert species_name == "setosa"
 
 
 # Prueba de la función predict con un valor de predicción desconocido

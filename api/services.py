@@ -18,6 +18,7 @@ en el formato definido por `PredictInput` para obtener la predicción.
 import os
 import pickle
 from api.schemas import PredictInput
+from pydantic import ValidationError
 
 # Cargar el modelo durante la inicialización del servicio
 MODEL_PATH = os.getenv("MODEL_PATH", "models/data/processed/model.pkl")
@@ -33,8 +34,7 @@ def predict(input_data: PredictInput) -> str:
     Predice el tipo de planta basado en las características de entrada.
 
     Este método utiliza un modelo preentrenado para predecir el nombre
-    de la especie
-    de una planta basándose en las características proporcionadas.
+    de la especie de una planta basándose en las características proporcionadas.
 
     Argumentos:
         input_data (PredictInput): Características de la planta.
@@ -42,17 +42,25 @@ def predict(input_data: PredictInput) -> str:
     Retorna:
         str: Nombre de la especie predicha ('setosa',
         'versicolor' o 'virginica').
+
+    Raises:
+        ValueError: Si la predicción no puede ser procesada.
     """
-    features = [
-        [
-            input_data.sepal_length,
-            input_data.sepal_width,
-            input_data.petal_length,
-            input_data.petal_width,
+    try:
+        # Extraer las características en el formato esperado por el modelo
+        features = [
+            [
+                input_data.sepal_length,
+                input_data.sepal_width,
+                input_data.petal_length,
+                input_data.petal_width,
+            ]
         ]
-    ]
-    # Predice el valor objetivo (0, 1 o 2)
-    prediction = model.predict(features)[0]
+        # Predice el valor objetivo (0, 1 o 2)
+        prediction = model.predict(features)[0]
+    except Exception as e:
+        raise ValueError(f"Error during prediction: {e}")
+
     # Mapea el valor objetivo al nombre correspondiente de la especie
     species_name = CLASS_MAPPING.get(prediction, "Unknown")
     return species_name
