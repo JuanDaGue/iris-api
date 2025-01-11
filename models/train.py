@@ -13,7 +13,8 @@ Dependencias:
 - os
 
 Uso:
-Ejecute el script para entrenar el modelo y guardarlo en el directorio especificado.
+Ejecute el script para entrenar el modelo y guardarlo
+en el directorio especificado.
 """
 
 from sklearn import datasets
@@ -46,18 +47,21 @@ def split_data(X, y, test_size=0.2, random_state=42):
     Argumentos:
         X (array-like): Características del conjunto de datos.
         y (array-like): Etiquetas objetivo del conjunto de datos.
-        test_size (float): Proporción del conjunto de datos que se incluirá en la división de prueba.
+        test_size (float): Proporción del conjunto de datos que se
+        incluirá en la división de prueba.
         random_state (int): Semilla aleatoria para garantizar reproducibilidad.
 
     Retorna:
-        tuple: Divisiones de entrenamiento y prueba (X_train, X_test, y_train, y_test).
+        tuple: Divisiones de entrenamiento y prueba
+        (X_train, X_test, y_train, y_test).
     """
     return train_test_split(X, y, test_size=test_size, random_state=random_state)
 
 # Entrenar el modelo
 def train_model(X_train, y_train, random_state=42):
     """
-    Entrena un Clasificador de Árbol de Decisión con los datos de entrenamiento.
+    Entrena un Clasificador de Árbol de Decisión con los
+    datos de entrenamiento.
 
     Argumentos:
         X_train (array-like): Características de entrenamiento.

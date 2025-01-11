@@ -95,3 +95,18 @@ JSON con las medidas de sépalo y pétalo.
     -**FastAPI**: Framework para construir APIs modernas y rápidas.
     - **Scikit-learn**: Librería para entrenar el modelo de clasificación.
     - **Docker**: Para contenerización y despliegue.
+
+## Pruebas Unitarias del Endpoint
+
+Para realizar las pruebas unitarias, ejecuta el siguiente comando en la terminal:
+```bash
+pytest tests/test_predict_endpoint.py
+
+
+## Analisis exploratoria de los graficos 
+
+para encontrar el analisis exploratorio de los datos visita la sigueinte ruta
+```
+models/notebooks/01_data_exploration.ipynb
+
+![alt text](image.png)
