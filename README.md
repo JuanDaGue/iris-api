@@ -63,10 +63,14 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
     ```bash
     docker run -d -p 8000:8000 --name contenedoriris iris:iris
 
-4. ** Acceder a la API:**
+4.**Entrenando y ejecutando el modelo**
     ```bash
-    URL base: http://localhost:8000
-    Documentación interactiva: http://localhost:8000/docs.
+    docker exec -it contenedoriris python models/train.py
+    docker exec -it contenedoriris pytest tests/test_predict_endpoint.py
+    
+5. ** Acceder a la API:**
+    ```bash
+    Documentación interactiva: http://localhost:8000.
 
 ## **Uso de la API**
 
