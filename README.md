@@ -55,11 +55,11 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
    git clone https://github.com/JuanDaGue/iris-api.git iris-api
    cd iris-api
 
-2. ** Construir el contenedor Docker:**
+2. **Construir el contenedor Docker:**
     ```bash
     docker buildx build -t "iris:iris" .
 
-2. ** Ejecutar el contenedor:**
+2. **Ejecutar el contenedor:**
     ```bash
     docker run -d -p 8000:8000 --name contenedoriris iris:iris
 
@@ -68,7 +68,7 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
     docker exec -it contenedoriris python models/train.py
     docker exec -it contenedoriris pytest tests/test_predict_endpoint.py
 
-5. ** Acceder a la API:**
+5. **Acceder a la API:**
     ```bash
     Documentación interactiva: http://localhost:8000.
 
@@ -77,7 +77,7 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
 **POST /predict**
 
 ### Entrada:
-
+![alt text](image-1.png)
 JSON con las medidas de sépalo y pétalo.
 ```json
 {
@@ -96,21 +96,24 @@ JSON con las medidas de sépalo y pétalo.
 ```
 
 ## Tecnologías Utilizadas
-    -**FastAPI**: Framework para construir APIs modernas y rápidas.
-    - **Scikit-learn**: Librería para entrenar el modelo de clasificación.
-    - **Docker**: Para contenerización y despliegue.
+
+- **FastAPI**: Framework para construir APIs modernas y rápidas.
+- **Scikit-learn**: Librería para entrenar el modelo de clasificación.
+- **Docker**: Para contenerización y despliegue.
 
 ## Pruebas Unitarias del Endpoint
 
 Para realizar las pruebas unitarias, ejecuta el siguiente comando en la terminal:
 ```bash
-pytest tests/test_predict_endpoint.py
-
+docker exec -it contenedoriris pytest tests/test_predict_endpoint.py
+```
 
 ## Analisis exploratoria de los graficos 
 
 para encontrar el analisis exploratorio de los datos visita la sigueinte ruta
+
 ```
 models/notebooks/01_data_exploration.ipynb
+```
 
 ![alt text](image.png)
