@@ -18,10 +18,10 @@ venv/
 # Logs
 *.log
 
-# Data folders
-models/data/raw/
-models/data/processed/
-models/data/external/
+# # Data folders
+# models/data/raw/
+# models/data/processed/
+# models/data/external/
 
 # Docker-specific files
 docker-compose.override.yml
