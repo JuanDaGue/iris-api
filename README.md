@@ -57,11 +57,11 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
 
 2. ** Construir el contenedor Docker:**
     ```bash
-    docker build -t iris-classification-api .
+    docker buildx build -t "iris:iris" .
 
 2. ** Ejecutar el contenedor:**
     ```bash
-    docker run -d -p 8000:8000 iris-classification-api.
+    docker run -d -p 8000:8000 --name contenedoriris iris:iris
 
 4. ** Acceder a la API:**
     ```bash
