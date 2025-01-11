@@ -52,8 +52,8 @@ El conjunto de datos Iris es un dataset ampliamente utilizado en proyectos de Ma
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/JuanDaGue/iris-api.git
-   cd iris-classification-api
+   git clone https://github.com/JuanDaGue/iris-api.git iris-api
+   cd iris-api
 
 2. ** Construir el contenedor Docker:**
     ```bash
